@@ -40,8 +40,8 @@ class DataSource: NSObject {
                 
                 let song = Song(name: name, artist: artist, imageUrl: imageUrl, price: price)
                 self.songs.append(song)
-//                print(self.songs.count)
-
+                //                print(self.songs.count)
+                
             }
         }
         dataTask.resume()
@@ -60,7 +60,7 @@ extension DataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        guard let name = songs[indexPath.row].name, let price = songs[indexPath.row].price else { return nil }
+        //        guard let name = songs[indexPath.row].name, let price = songs[indexPath.row].price else { return nil }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as! SongCell
         let song = songs[indexPath.row]
@@ -68,8 +68,12 @@ extension DataSource: UITableViewDataSource {
         cell.title.text = "\(song.name!)"
         cell.artist.text = "\(song.artist!)"
         cell.price.setTitle("\(song.price!)", for: .normal)
-
-        cell.songImage.sd_setImage(with: URL(string: song.imageUrl!))
+        
+        let data = try! Data(contentsOf: URL(string: song.imageUrl!)!)
+        
+        DispatchQueue.main.async {
+            cell.songImage.image = UIImage(data: data)
+        }
         
         return cell
     }

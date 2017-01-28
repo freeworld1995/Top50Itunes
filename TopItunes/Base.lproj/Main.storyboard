@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Top 50 Songs-->
+        <!--Top 50 Songz-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TopItunes" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7w9-Pr-RMM" secondAttribute="bottom" id="tnz-OZ-qaL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Top 50 Songs" id="Y9K-nc-EWD"/>
+                    <navigationItem key="navigationItem" title="Top 50 Songz" id="Y9K-nc-EWD"/>
                     <connections>
                         <outlet property="tableView" destination="7w9-Pr-RMM" id="HtI-Fo-dXE"/>
                     </connections>
